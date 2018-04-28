@@ -2,10 +2,16 @@
 
 ## Summary
 Fisher's Iris data set[[2](https://archive.ics.uci.edu/ml/datasets/iris)] is a multivariate data set introduced by the British statistician and biologist Ronald Fisher in his 1936 paper "The use of multiple measurements in taxonomic problems" as an example of linear discriminant analysis[[1](https://en.wikipedia.org/wiki/Iris_flower_data_set)].
-The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor) and reports on four characteristics of each of them: sepal length, sepal width, petal length, and petal width, in centimetres. 
+The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor) and reports on 4 characteristics of each of them: sepal length, sepal width, petal length, and petal width, in centimetres. 
 
 It is often used in statistical science for illustrating various problems in statistical graphics, multivariate statistics and machine learning.
 Containing 150 observations, it is small but not trivial and the task it poses of discriminating between 3 species from measurements of their petals and sepals is simple yet challenging.
+
+I demonstrate here basic statistical analysis of the dataset in python, using pandas and matplotlib packages.
+
+First, I print out some basic stats (minimum, maximum, mean, standard deviation, ...) of the overall dataset and for each species separately.
+
+Then I plot, for each species, petal and sepal distribution:
 
 
 ## Examples of some interesting analyses on the data set
