@@ -7,9 +7,9 @@ The data set consists of 50 samples from each of three species of Iris (Iris set
 It is often used in statistical science for illustrating various problems in statistical graphics, multivariate statistics and machine learning.
 Containing 150 observations, it is small but not trivial and the task it poses of discriminating between 3 species from measurements of their petals and sepals is simple yet challenging.
 
-I demonstrate here basic statistical analysis of the dataset in python, using pandas, seaborn and matplotlib packages.
+I demonstrate here basic statistical analysis of the Iris dataset in python, using pandas, seaborn and matplotlib packages.
 
-First, I print out some basic stats (minimum, maximum, mean, standard deviation, ...) of the overall dataset and for each species separately.
+First, I print out some basic stats of the overall dataset and for each species separately, using .
 
 Then I plot, for each species, petal and sepal distribution:
 
@@ -18,7 +18,16 @@ Then I plot, for each species, petal and sepal distribution:
 examples of interesting analyses that others have pursued based on the data set
 
 ## Code documentation
-document how to run the Python code and what that code does
+To run the code, in a terminal type: ```python irishProj.py```
+
+In the script, I first import dataset file and set some variables i use later in the code.
+
+Then I define few functions:
+-  ```showBasicStats()``` - prints some basic stats (minimum, maximum, mean, standard deviation, ...) using pandas'  **describe()** function
+-  ```otherInterestingStats()``` - using pandas' **min(),max(),mean(),median(),std(),var(),corr()** functions in a loop on grouped dataframe
+-  ```psDistributionPlot()``` - generates a picture with 2 graphs showing petal and sepal distribution (scatter plot)
+
+In the main part of the script, I call above mentioned functions and also create *pairplot* and *radviz graphs*. 
 
 ## References
 [1] https://en.wikipedia.org/wiki/Iris_flower_data_set
@@ -36,3 +45,5 @@ document how to run the Python code and what that code does
 [7] http://pandas.pydata.org/
 
 [8] https://seaborn.pydata.org
+
+[9] https://matplotlib.org/
