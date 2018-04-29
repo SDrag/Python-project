@@ -1,5 +1,17 @@
 # Python-project
 
+## Content
+File Name | Comment 
+--------- | -------
+Figure_1.png | Sepal/Petal distribution graph
+Figure_2.png | Pairplot graph	
+Figure_3.png | Radviz graph
+Table_1.png | Screenshot of ```showBasicStats()``` function output
+Table_2a.png | Screenshot of the first part of ```otherInterestingStats()``` function output
+Table_2b.png | Screenshot of the second part of ```otherInterestingStats()``` function output
+iris.csv | Iris dataset
+irisProj.py | Python project script
+
 ## Summary
 Fisher's Iris data set[[2](https://archive.ics.uci.edu/ml/datasets/iris)] is a multivariate data set introduced by the British statistician and biologist Ronald Fisher in his 1936 paper "The use of multiple measurements in taxonomic problems" as an example of linear discriminant analysis[[1](https://en.wikipedia.org/wiki/Iris_flower_data_set)].
 The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor) and reports on 4 characteristics of each of them: sepal length, sepal width, petal length, and petal width, in centimetres. 
@@ -9,9 +21,7 @@ Containing 150 observations, it is small but not trivial and the task it poses o
 
 I demonstrate here basic statistical analysis of the Iris dataset in python, using pandas, seaborn and matplotlib packages.
 
-First, I print out some basic stats of the overall dataset and for each species separately, using .
 
-Then I plot, for each species, petal and sepal distribution:
 
 
 ## Examples of some interesting analyses on the data set
@@ -20,7 +30,7 @@ examples of interesting analyses that others have pursued based on the data set
 ## Code documentation
 To run the code, in a terminal type: ```python irishProj.py```
 
-In the script, I first import dataset file and set some variables i use later in the code.
+In the script, I first import dataset file and set some variables I use later in the code.
 
 Then I define few functions:
 -  ```showBasicStats()``` - prints some basic stats (minimum, maximum, mean, standard deviation, ...) using pandas'  **describe()** function
