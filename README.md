@@ -1,6 +1,6 @@
-# Python-project
+# Python Project on Iris Dataset
 
-## Content
+## Repository Content
 File Name | Comment 
 --------- | -------
 Figure_1.png | Sepal/Petal distribution graph
@@ -16,16 +16,25 @@ irisProj.py | Python project script
 Fisher's Iris data set[[2](https://archive.ics.uci.edu/ml/datasets/iris)] is a multivariate data set introduced by the British statistician and biologist Ronald Fisher in his 1936 paper "The use of multiple measurements in taxonomic problems" as an example of linear discriminant analysis[[1](https://en.wikipedia.org/wiki/Iris_flower_data_set)].
 The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor) and reports on 4 characteristics of each of them: sepal length, sepal width, petal length, and petal width, in centimetres. 
 
-It is often used in statistical science for illustrating various problems in statistical graphics, multivariate statistics and machine learning.
+It is often used in statistical science for illustrating various problems in statistics and machine learning for classification and prediction – to see which features of an iris can identify the flower as a certain type of iris.
 Containing 150 observations, it is small but not trivial and the task it poses of discriminating between 3 species from measurements of their petals and sepals is simple yet challenging.
 
 I demonstrate here basic statistical analysis of the Iris dataset in python, using pandas, seaborn and matplotlib packages.
 
 
+## Analyses of the Iris data set
+We can create many different views of the Iris dataset, both numerical (showing results in a table) and graphical.
+By visualising numerical dataset we can much easier spot any trend or pattern appearing in the dataset.
+
+From the following 3 screenshots, that show output of my script, it is not so obvious that there is a pattern there.
+I've shown here, in a tabelar view, some of the most often calculations performed on the dataset:
+minimun, maximum, mean, median, standard deviation, unbiased variance, pairwise correlation of columns
+
+![Table 1](https://github.com/SDrag/Python-project/blob/master/Table_1.png) ![Table 2a](https://github.com/SDrag/Python-project/blob/master/Table_2a.png) ![Table 2b](https://github.com/SDrag/Python-project/blob/master/Table_2b.png)
 
 
-## Examples of some interesting analyses on the data set
-examples of interesting analyses that others have pursued based on the data set
+
+
 
 ## Code documentation
 To run the code, in a terminal type: ```python irishProj.py```
