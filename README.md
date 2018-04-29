@@ -7,7 +7,7 @@ The data set consists of 50 samples from each of three species of Iris (Iris set
 It is often used in statistical science for illustrating various problems in statistical graphics, multivariate statistics and machine learning.
 Containing 150 observations, it is small but not trivial and the task it poses of discriminating between 3 species from measurements of their petals and sepals is simple yet challenging.
 
-I demonstrate here basic statistical analysis of the dataset in python, using pandas and matplotlib packages.
+I demonstrate here basic statistical analysis of the dataset in python, using pandas, seaborn and matplotlib packages.
 
 First, I print out some basic stats (minimum, maximum, mean, standard deviation, ...) of the overall dataset and for each species separately.
 
@@ -34,3 +34,5 @@ document how to run the Python code and what that code does
 [6] http://patrickhoey.com/downloads/Computer_Science/03_Patrick_Hoey_Data_Visualization_Dataset_paper.pdf
 
 [7] http://pandas.pydata.org/
+
+[8] https://seaborn.pydata.org
