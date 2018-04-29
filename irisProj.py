@@ -5,25 +5,11 @@
 # Importing packages:
 import pandas as pnd
 import matplotlib.pyplot as mpl
+import seaborn as sb
 
-def showBasicStats():
-    """ This function prints some basic statistics for the species """
-    print("Iris overall:")
-    print(dataSet.describe()) # overall stats
-    for i in irs:
-        print()
-        print(i + ":")
-        print(irs[i].describe()) # stats for the species i
-
-def distributionPlot(plotTitle,xCol,yCol):
-    """ This function generates scatter distribution plot """
-    mpl.figure()
-    fig,ax=mpl.subplots(1,1,figsize=(12, 6))
-    for i in irs:
-        irs[i].plot(x=xCol, y=yCol, kind="scatter", ax=ax, label=i,color=irsColors[i])
-    ax.set(title=plotTitle)
-    ax.legend()
-    mpl.show()
+##################################
+## First some preparation work: ##
+##################################
 
 # File containing the dataset:
 dataFile = 'iris.csv'
@@ -31,22 +17,62 @@ dataFile = 'iris.csv'
 dataSet = pnd.read_csv(dataFile)
 
 # Initialising dictionaries I'll use to loop through Iris species:
-irs = {} # dictionary for each Iris class dataset:
-irsColors = {}  # dictionary that holds species-color relation 
+irs = {}        # dictionary for each Iris class dataset:
 
-# List of colors to be used:
-clrs = ['r','b','g']
 
-# Separating dataset for each Iris species and assigning it a color: 
+# Separating dataset for each Iris species: 
 j = 0
 for iris in dataSet['class'].unique():
     irs[iris] = dataSet[dataSet['class']==iris]
-    irsColors[iris] = clrs[j]
     j = j + 1
 
-# Printing basic stats:
+#######################################################################
+## Defining now some useful functions for later use in the main part ##
+#######################################################################
+
+def showBasicStats():
+    """ This function prints some basic statistics for the species. 
+        For overall dataset and per species. """
+    print("Iris overall stats:")
+    print(dataSet.describe()) # overall stats
+    for i in irs:             # looping through species
+        print()
+        print(i + " stats:")
+        print(irs[i].describe()) # stats for the species 'i'
+
+def psDistributionPlot():
+    """ This function generates scatter petal & sepal distribution plot.
+        Both plots are on the same picture. """
+    mpl.figure()
+    plotTitle = ['Sepal Distribution','Petal Distribution'] # plot titles
+    xCol = ['sepal_length','petal_length']                  # x-axis
+    yCol = ['sepal_width','petal_width']                    # y-axis
+    clrs = ['r','b','g']                                    # List of colors to be used
+    fig,ax=mpl.subplots(1,2,figsize=(12, 6))
+    for i in range(0,2):    # since we have 2 graphs
+        j = 0               # color counter
+        for ir in irs:      # looping through species
+            irs[ir].plot(x=xCol[i], y=yCol[i], kind='scatter', ax=ax[i], label=ir,color=clrs[j])
+            j = j + 1
+        ax[i].set(title=plotTitle[i])   # setting graph title
+        ax[i].legend()                  # adding legend to the graph
+    mpl.show()
+
+##################
+###  Main part ###
+##################
+
+# Printing basic stats about dataset:
 showBasicStats()
-# Plot Sepal distribution:
-distributionPlot('Sepal comparasion','sepal_length','sepal_width')
-# Plot Petal distribution:
-distributionPlot('Petal Comparasion','petal_length','petal_width')
+# Plot Sepal/Petal distribution:
+psDistributionPlot()
+
+# Pairplot graph:
+sb.pairplot(dataSet, hue="class")
+mpl.show()
+
+# Radviz graph:
+pnd.plotting.radviz(dataSet, 'class')
+mpl.show()
+
+
